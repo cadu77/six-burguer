@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Six Burgers</title>
+  <link rel="sortcut icon" href="img/logo.jpg" type="image/x-icon" />;
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section>
+    <div class="bg4"></div>
+    <header>
+      <div class="logo"><img src="img/logo.jpg" width="100" height="100"></div>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contatos</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="textBox4">
+        <h2>04. Cheese bacon.</h2>
+        <p>Pão, burger 120, queijo, bacon e molho especial. 🥓😍</p>
+        <a href="https://l.instagram.com/?u=http%3A%2F%2Fwww.sixburgers.com.br%2F&e=ATNsjjWPue4Btf_KqoQXElDDtrbyROsek-BM87ZD3uI_gaRBSWGnyHyhBL2COWC7WYDLn-RTefL9WT9z6QVz8A&s=1">Faça seu pedido pelo Ifood 📲</a>
+      </div>
+      <div class="imgBox">
+        <img src="img/numero4.png" class="six">
+      </div>
+      <ul class="thumb">
+        <li data-text="Cheeseburger"><a href="index.html"><img src="img/numero1.png" onclick="imgSlider('numero1.png');changeBgColor('#fc4a55')"></li></a>
+        <li data-text="Chickenburger"><a href="numero2.html"><img src="img/numero2.png" onclick="imgSlider('numero2.png');changeBgColor('#36C236')"></li></a>
+        <li data-text="Cheesesalad"><a href="numero3.html"><img src="img/numero3.png" onclick="imgSlider('numero3.png');changeBgColor('#84DFD0')"></li></a>
+        <li data-text="Cheesebacon" class="active"><a href="numero4.html"><img src="img/numero4.png" onclick="imgSlider('numero4.png');changeBgColor('#EEE08C')"></li></a>
+        <li data-text="Bluecheeseburger"><a href="numero5.html"><img src="img/numero5.png" onclick="imgSlider('numero5.png');changeBgColor('#8F8593')"></li></a>
+        <li data-text="Summer"><a href="numero6.html"><img src="img/numero6.png" onclick="imgSlider('numero6.png');changeBgColor('#C01EC2')"></li></a>
+      </ul>
+      <ul class="sci">
+        <li><a href="#"><img src="img/facebook.png"></a></li>
+        <li><a href="#"><img src="img/twitter.png"></a></li>
+        <li><a href="#"><img src="img/instagram.png"></a></li>
+
+      </ul>
+  </section>
+  <script>
+
+    let menuToggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    menuToggle.onclick = function () {
+      menuToggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+
+    }
+
+    // imagem com o clique
+    function imgSlider(anything) {
+      document.querySelector('.six').src = anything;
+    }
+    // background das imagens com as cores
+    function changeBgColor(color) {
+      const bg = document.querySelector('.bg');
+      bg.style.background = color;
+    }
+
+    // ativando a thmbnails
+    let el = document.querySelectorAll('.thumb li');
+    for (let i = 0; i < el.length; i++) {
+      el[i].onclick = function () {
+        var c = 0;
+        while (c < el.length) {
+          el[c++].className = 'check';
+        }
+        el[i].className = 'check active';
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,550 @@
+@import url('https:/fonts.googleapis.com/css?familyPoppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Pacifico&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+section{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fc4a55;
+}
+/* NUMERO 1*/
+.bg1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fc4a55;
+}
+/* NUMERO 2*/
+.bg2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #36C236;
+}
+/* NUMERO 3*/
+.bg3{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #84DFD0;
+  
+}
+/* NUMERO 4*/
+.bg4{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #EEE08C;
+}
+/* NUMERO 5*/
+.bg5{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #E5EBEA;
+}
+/* NUMERO 6*/
+.bg6{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #C01EC2;
+}
+
+.bg::before{
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background: rgba(0,0,0,0.1);
+}
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .logo{
+  border-radius: 50%;
+  position: relative; 
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+header .navigation{
+  position: relative;
+  display: flex;
+}
+header .navigation li{
+  list-style: none;
+}
+header .navigation li a{
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  margin-left: 10px;
+  padding: 8px 15px;
+  border-radius: 40px;
+  text-decoration: none;
+}
+header .navigation li a a.active,
+header .navigation li a:hover{
+  background: #fff;
+  color: #333;
+}
+.content{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .textBox{
+  position: relative;
+  max-width: 600px;
+  justify-content: center;
+}
+.content .textBox h2{
+  color: #fff;
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+}
+.content .textBox p{
+  color: #fff;
+  margin-top: 20px;
+}
+.content .textBox a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.content .imgBox{
+  position: relative;
+  z-index: 1;
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+.content .imgBox img{
+  max-width: 550px;
+}
+.thumb{
+  position: absolute;
+  left: 50%;
+  bottom: -200px;
+  transform: translateX(-50%);
+  display: flex;
+}
+.thumb li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+.thumb li.active{
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+/* PRECISO ARRUMAAAAAAAAAAR AQUIIIIIIIIII*/
+.thumb li::before{
+  position: absolute;
+  top: -200px;
+  left: -100px; 
+  content: attr(data-text);
+  white-space: nowrap;
+  font-size: 8em;
+  color: rgba(193, 187, 240, 0.822);
+  opacity: 0;
+  font-weight: 700;
+  pointer-events: none;
+}
+.thumb li.active::before{
+  opacity: 1;
+}
+.thumb li img{
+  max-width: 60px;
+}
+.sci{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sci li{
+  list-style: none;
+}
+.sci li a{
+  display: inline-block;
+  margin: 5px 0;
+  transform: scale(0.6);
+  filter: invert(1);
+}
+@media(max-width: 991px){
+  .bg::before{
+    display: none;
+  }
+  .thumb li{
+    font-size: 6px;
+  }
+  header{
+    padding: 20px;
+  }
+  section{
+    padding: 20px;
+    padding-bottom: 120px;
+  }
+  .content{
+    margin-top: 100px;
+    flex-direction: column;
+  }
+  .content .textBox{
+    max-width: 100%;
+  }
+  .content .textBox h2{
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  .content .imgBox{
+    max-width: 100%;
+    justify-content: center;
+  }
+  .content .imgBox img{
+    max-width: 300px;
+  }
+  .thumb li{
+    margin: 0 3px;
+    height: 55px;
+  }
+  .thumb li img{
+    max-width: 40px;
+  }
+  .thumb li::before{
+    position: absolute;
+    top: -150px;
+    left: 0;
+    font-size: 6em;
+  }
+  .sci{
+    background: rgba(0,0,0,0.1);
+    right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  header .navigation{
+    display: none;
+  }
+  .toggle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: url(menu.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000;
+  }
+  .toggle.active{
+    position: fixed;
+    right: 20px;
+    background: url(close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  header .navigation.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fc4a55;
+    z-index: 10;
+  }
+  header .navigation li a{
+    font-size: 1.2em;
+    margin: 6px 0;
+  }
+}
+
+/* NUMERO 1 */
+.content .textBox1{
+  position: relative;
+  max-width: 600px;
+  justify-content: center;
+}
+.content .textBox1 h2{
+  color: rgb(43, 197, 164);
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Pacifico', cursive;
+}
+.content .textBox1 p{
+  color: rgb(48, 185, 174);
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Pacifico', cursive;
+
+}
+.content .textBox1 a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: rgb(255, 255, 255);
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* NUMERO 2*/
+.content .textBox2{
+  position: relative;
+  max-width: 600px;
+  justify-content: center;
+}
+.content .textBox2 h2{
+  color: rgb(43, 197, 164);
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Pacifico', cursive;
+}
+.content .textBox2 p{
+  color: rgb(48, 185, 174);
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Pacifico', cursive;
+
+}
+.content .textBox2 a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: rgb(255, 255, 255);
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* NUMERO 3*/
+.content .textBox3{
+  position: relative;
+  max-width: 600px;
+  justify-content: center;
+}
+.content .textBox3 h2{
+  color: rgb(43, 197, 164);
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Pacifico', cursive;
+}
+.content .textBox3 p{
+  color: rgb(48, 185, 174);
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Pacifico', cursive;
+
+}
+.content .textBox3 a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: rgb(255, 255, 255);
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* NUMERO 4*/
+.content .textBox4{
+  position: relative;
+  max-width: 600px;
+  justify-content: center;
+}
+.content .textBox4 h2{
+  color: rgb(43, 197, 164);
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Pacifico', cursive;
+}
+.content .textBox4 p{
+  color: rgb(48, 185, 174);
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Pacifico', cursive;
+
+}
+.content .textBox4 a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: rgb(255, 255, 255);
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* NUMERO 5 */
+.content .textBox5{
+  position: relative;
+  max-width: 600px;
+  justify-content: center;
+}
+.content .textBox5 h2{
+  color: rgb(43, 197, 164);
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Pacifico', cursive;
+}
+.content .textBox5 p{
+  color: rgb(48, 185, 174);
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Pacifico', cursive;
+
+}
+.content .textBox5 a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: rgb(255, 255, 255);
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* NUMERO 6 */
+.content .textBox6{
+  position: relative;
+  max-width: 600px;
+  justify-content: center;
+}
+.content .textBox6 h2{
+  color: rgb(43, 197, 164);
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Pacifico', cursive;
+}
+.content .textBox6 p{
+  color: rgb(48, 185, 174);
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Pacifico', cursive;
+
+}
+.content .textBox6 a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: rgb(255, 255, 255);
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
